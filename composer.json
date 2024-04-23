@@ -14,6 +14,12 @@
             "Yu\\ThinkMultiAuth\\": "src/"
         }
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
     "scripts": {
         "post-install-cmd": [
             "Yll\\ThinkMultiAuth\\Install::install"
