@@ -2,13 +2,13 @@
 
 declare (strict_types=1);
 
-namespace Yu\ThinkMultiAuth\Facade;
+namespace Yll\ThinkMultiAuth\Facade;
 
 /**
  * Class Auth
  * @package Shopwwi\WebmanAuth\Facade
- * @see \Yu\ThinkMultiAuth\Auth
- * @mixin \Yu\ThinkMultiAuth\Auth
+ * @see \Yll\ThinkMultiAuth\Auth
+ * @mixin \Yll\ThinkMultiAuth\Auth
  * @method guard(string $name) static 设置用户角色
  * @method login($data, int $access_time = 0, int $refresh_time = 0) static 登入
  * @method refresh() static 刷新token
@@ -26,7 +26,7 @@ class Auth
     public static function instance()
     {
         if (!static::$_instance) {
-            static::$_instance = new \Yu\ThinkMultiAuth\Auth();
+            static::$_instance = new \Yll\ThinkMultiAuth\Auth();
         }
         return static::$_instance;
     }

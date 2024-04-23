@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yu\ThinkMultiAuth\Facade;
+namespace Yll\ThinkMultiAuth\Facade;
 
 use Exception;
 

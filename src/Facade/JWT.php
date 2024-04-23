@@ -2,13 +2,13 @@
 
 declare (strict_types=1);
 
-namespace Yu\ThinkMultiAuth\Facade;
+namespace Yll\ThinkMultiAuth\Facade;
 
 /**
  * Class Auth
  * @package Shopwwi\WebmanAuth\Facade
- * @see \Yu\ThinkMultiAuth\JWT
- * @mixin \Yu\ThinkMultiAuth\JWT
+ * @see \Yll\ThinkMultiAuth\JWT
+ * @mixin \Yll\ThinkMultiAuth\JWT
  * @method make(array $extend, int $access_exp = 0, int $refresh_exp = 0) static 生成令牌
  * @method refresh(int $accessTime) static 刷新令牌
  * @method guard($guard = 'user') static 设置角色
@@ -26,7 +26,7 @@ class JWT
     public static function instance()
     {
         if (!static::$_instance) {
-            static::$_instance = new \Yu\ThinkMultiAuth\JWT();
+            static::$_instance = new \Yll\ThinkMultiAuth\JWT();
         }
         return static::$_instance;
     }

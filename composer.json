@@ -1,5 +1,5 @@
 {
-    "name": "yu/think-multi-auth",
+    "name": "yll/think-multi-auth",
     "description": "thinkphp multi auth",
     "keywords": ["thinkphp", "auth"],
     "type": "library",
@@ -16,7 +16,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "Yu\\ThinkMultiAuth\\Install::install"
+            "Yll\\ThinkMultiAuth\\Install::install"
         ]
     },
     "authors": [

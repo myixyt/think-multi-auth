@@ -13,11 +13,11 @@
  *-------------------------------------------------------------------------t*
  */
 
-namespace Yu\ThinkMultiAuth;
+namespace Yll\ThinkMultiAuth;
 
-use Yu\ThinkMultiAuth\Exception\JwtTokenException;
-use Yu\ThinkMultiAuth\Facade\JWT as JwtFace;
-use Yu\ThinkMultiAuth\Facade\Str;
+use Yll\ThinkMultiAuth\Exception\JwtTokenException;
+use Yll\ThinkMultiAuth\Facade\JWT as JwtFace;
+use Yll\ThinkMultiAuth\Facade\Str;
 
 class Auth
 {

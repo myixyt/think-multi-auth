@@ -14,7 +14,7 @@
  */
 
 
-namespace Yu\ThinkMultiAuth\Exception;
+namespace Yll\ThinkMultiAuth\Exception;
 
 
 class JwtTokenException extends \RuntimeException

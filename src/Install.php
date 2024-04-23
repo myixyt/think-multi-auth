@@ -1,6 +1,6 @@
 <?php
 
-namespace Yu\ThinkMultiAuth;
+namespace Yll\ThinkMultiAuth;
 
 class Install
 {

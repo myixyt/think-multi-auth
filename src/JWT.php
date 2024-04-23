@@ -14,15 +14,15 @@
  */
 
 
-namespace Yu\ThinkMultiAuth;
+namespace Yll\ThinkMultiAuth;
 
 use Firebase\JWT\BeforeValidException;
 use Firebase\JWT\ExpiredException;
 use Firebase\JWT\Key;
 use Firebase\JWT\SignatureInvalidException;
 use Firebase\JWT\JWT as jwtMan;
-use Yu\ThinkMultiAuth\Exception\JwtTokenException;
-use Yu\ThinkMultiAuth\Facade\Str;
+use Yll\ThinkMultiAuth\Exception\JwtTokenException;
+use Yll\ThinkMultiAuth\Facade\Str;
 use Predis\Client;
 use UnexpectedValueException;
 
