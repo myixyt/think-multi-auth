@@ -1,0 +1,28 @@
+{
+    "name": "yu/think-multi-auth",
+    "description": "thinkphp multi auth",
+    "keywords": ["thinkphp", "auth"],
+    "type": "library",
+    "require": {
+        "php": ">=7.2",
+        "firebase/php-jwt": "^5.4",
+        "predis/predis": "^2.2.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Yu\\ThinkMultiAuth\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Yu\\ThinkMultiAuth\\Install::install"
+        ]
+    },
+    "authors": [
+        {
+            "name": "yu",
+            "email": "985809170@qq.om"
+        }
+    ]
+}
