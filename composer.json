@@ -21,7 +21,7 @@
     },
     "minimum-stability": "dev",
     "scripts": {
-        "post-install-cmd": [
+        "post-package-install": [
             "Yll\\ThinkMultiAuth\\Install::install"
         ]
     },
