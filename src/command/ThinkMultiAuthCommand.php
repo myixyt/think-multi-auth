@@ -2,7 +2,7 @@
 
 namespace app\command;
 
-use Yu\ThinkMultiAuth\Facade\Str;
+use Yll\ThinkMultiAuth\Facade\Str;
 use think\console\Command;
 use think\console\Input;
 use think\console\input\Argument;
