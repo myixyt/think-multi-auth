@@ -1,19 +1,4 @@
 <?php
-/**
- *-------------------------------------------------------------------------p*
- *
- *-------------------------------------------------------------------------h*
- * @copyright  Copyright (c) 2015-2022 Shopwwi Inc. (http://www.shopwwi.com)
- *-------------------------------------------------------------------------c*
- * @license    http://www.shopwwi.com        s h o p w w i . c o m
- *-------------------------------------------------------------------------e*
- * @link       http://www.shopwwi.com by 象讯科技 phcent.com
- *-------------------------------------------------------------------------n*
- * @since      shopwwi象讯·PHP商城系统Pro
- *-------------------------------------------------------------------------t*
- */
-
-
 namespace Yll\ThinkMultiAuth;
 
 use Firebase\JWT\BeforeValidException;
@@ -55,21 +40,23 @@ class JWT
         $this->config = $_config;
         if ($_config['redis']) {
             // thinkphp缓存配置
-            $redisConf = config('cache.redis');
+            $redisConf = config('cache.stores.redis');
             if (empty($redisConf)) {
                 throw new JwtTokenException('The redis cache configuration file is abnormal or does not exist');
             }
 
             $this->redis = true;
-            $this->redisClient = new Client([
-                'scheme' => 'tcp',
+
+            // Redis 服务器的连接参数
+            $parameters = [
+                'scheme' => 'tcp',         // 连接协议，可以是 tcp 或者 unix
                 'host' => $redisConf['host'],
                 'port' => $redisConf['port'],
-                'database' => 15,
-                'parameters' => [
-                    'password' => $redisConf['password']
-                ]
-            ]);
+                'password' => $redisConf['password'],
+                'database' => 15,           // 使用的数据库编号，默认是 0
+            ];
+            // 创建 Predis 客户端实例并连接到 Redis 服务器
+            $this->redisClient = new Client($parameters);
         }
 
     }
@@ -144,7 +131,7 @@ class JWT
     protected function getTokenFormHeader()
     {
         $header = request()->header('Authorization', '');
-        $token = request()->input('_token');
+        $token = input('_token');
         if (Str::startsWith($header, 'Bearer ')) {
             $token = Str::substr($header, 7);
         }
@@ -355,7 +342,7 @@ class JWT
     protected function setRedis(int $id, $accessToken, $refreshToken, $accessExp, $refreshExp)
     {
         $list = $this->redisClient->hGet("token_{$this->guard}", $id);
-        $clientType = strtolower(request()->input('client_type', 'web'));
+        $clientType = strtolower(input('client_type', 'web'));
         $defaultList = [
             'accessToken' => $accessToken,
             'refreshToken' => $refreshToken,

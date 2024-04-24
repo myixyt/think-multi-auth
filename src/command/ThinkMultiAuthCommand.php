@@ -20,7 +20,7 @@ class ThinkMultiAuthCommand extends Command
      */
     protected function configure()
     {
-        $this->addArgument('name', Argument::OPTIONAL, 'Name description');
+        $this->setName(self::$defaultName)->addArgument('name', Argument::OPTIONAL, 'Name description');
     }
 
 
